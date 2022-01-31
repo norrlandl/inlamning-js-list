@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital@0;1&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body> <div class="main">
+    <!-- SECTION 1: Add to-do -->
+    <section id="adding-section">
+      <h1><span>Lägg till</span></h1>
+      <!-- Input field and button for adding to-to -->
+      <div class="first-div">
+       <input
+          type="text"
+          id="add-todo-field"
+          placeholder="syssla"
+          class="add-field"
+        />
+        <span class='span'></span>
+        <button id="add-todo-btn" class="btn-all btn-done">LÄGG TILL</button>
+        <button id="reset-btn" class="btn-all btn-delete">ÅTERSTÄLL</button>
+        <div id="error-div" class="error emess"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: The list -->
+    <section class="list" id="todo-list-section">
+      <h2><span>Att göra</span></h2>
+      <div class="list-div">
+        <ul id="the-list-ul" class="reset"></ul>
+    </section>
+
+    <!-- SECTION 3: Finished -->
+    <section class="list" id="finished-section">
+      <h2><span>Färdiga</span></h2>
+      <div class="list-div">
+        <ul id="the-done-list-ul" class="reset"></ul>
+      </div>
+    </section>
+  </div>
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Montserrat Alternates', sans-serif; */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8f8f8;
+}
+
+.main {
+  width: 900px;
+  margin: 0px auto;
+  padding-top: 50px;
+}
+
+::selection {
+  color: white;
+  background-color: #5b46c7;
+  /* background: #ffa396; */
+  /* background: #7fe3b2; */
+}
+
+h1::selection {
+  color: white;
+  background-color: #5b46c7;
+}
+
+::placeholder {
+  color: lightgray;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 28px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 22px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#adding-section {
+  margin-bottom: 150px;
+}
+
+section span {
+  background-color: #7fe3b2;
+}
+
+#todo-list-section {
+  margin-bottom: 150px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input {
+  width: 350px;
+  padding-left: 30px;
+  font-size: 18px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  height: 50px;
+  border-radius: 10px 0px 0px 0px;
+  border: 2px solid #858585;
+  background-color: white;
+}
+
+/* ERROR MESSAGES */
+.error,
+.error-messages {
+  margin-top: 10px;
+  color: red;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  margin-left: 15px;
+}
+
+/* FIRST DIV */
+.first-div {
+  width: 650px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.first-div input {
+  background-color: white;
+}
+
+/* SECOND AND THIRD DIV */
+.list-div {
+  width: 800px;
+  position: relative;
+}
+
+.list-div ul {
+  padding: 0px;
+  list-style: none;
+  margin: 0px;
+}
+
+.list-div ul li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* <li> ITEM */
+.todo-list {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.todo-list input:disabled {
+  color: #ffa396;
+  background-color: #f8f8f8;
+}
+
+.btn-all {
+  height: 50px;
+  width: 150px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #454545;
+  background-color: #e9e9e9;
+  letter-spacing: 2px;
+}
+
+.list-div ul li button,
+.first-div button {
+  border: none;
+  border-right: 2px solid #858585;
+  border-top: 2px solid #858585;
+  border-bottom: 2px solid #858585;
+}
+
+.btn-edit {
+  height: 50px;
+  width: 150px;
+}
+
+.btn-edit:hover {
+  transition-duration: 0.4s;
+  background-color: #5b46c7;
+  color: white;
+}
+
+.btn-done:hover {
+  transition-duration: 0.4s;
+  background-color: #7fe3b2;
+  color: white;
+}
+
+.btn-delete {
+  border-radius: 0px 10px 0px 0px;
+}
+
+.btn-delete:hover {
+  transition-duration: 0.4s;
+  background-color: #ffa396;
+  color: white;
+}
