@@ -27,7 +27,7 @@ const list = {
 
   // Edit button
   editInput(e) {
-    let errorMessages = '';
+    // let errorMessages = '';
     if (e.target.innerText == 'ÄNDRA') {
       e.target.parentNode.firstChild.disabled = false;
       e.target.innerText = 'SPARA';
@@ -43,7 +43,6 @@ const list = {
         e.target.innerText = 'SPARA';
         return false;
       } else {
-        eRR.innerHTML = '';
         eRR.remove();
       }
     }
@@ -52,7 +51,11 @@ const list = {
   // Done button
   done(e) {
     if (e.target.parentNode.firstChild.value.trim() === '') {
+      eRR.innerHTML = '! En syssla kan inte vara tom';
+      e.target.parentNode.append(eRR);
       return false;
+    } else {
+      eRR.remove();
     }
     // Make list-input disabled
     e.target.parentNode.firstChild.disabled = true;
