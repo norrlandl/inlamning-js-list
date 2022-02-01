@@ -57,11 +57,25 @@ const list = {
     } else {
       eRR.remove();
     }
+    if ((e.target.parentNode.childNodes[1].innerText = 'SPARA')) {
+      e.target.parentNode.childNodes[1].innerText = 'ÄNDRA';
+    }
+
     // Make list-input disabled
     e.target.parentNode.firstChild.disabled = true;
     // Append
     doneList.append(e.target.parentNode);
     e.target.parentNode.childNodes[2].remove();
+
+    // if ((e.target.parentNode.childNodes[2].innerHTML = 'FÄRDIG')) {
+    //   e.target.parentNode.childNodes[2].innerHTML = 'TILLBAKA';
+    //   e.target.parentNode.childNodes[2].addEventListener('click', function (e) {
+    //     doList.append(e.target.parentNode);
+    //     e.target.parentNode.childNodes[2].innerHTML = 'FÄRDIG';
+    //   });
+    // } else {
+    //   return false;
+    // }
   },
 
   // Delete button
@@ -106,17 +120,6 @@ addTodoBtn.addEventListener('click', function (e) {
     'todo-field',
     null
   );
-
-  // // Create span
-  let span = list.createEl('span', null, null, null, 'span', null);
-
-  addTodoTextField.value = span.innerText;
-
-  // span.innerText = addTodoTextField.value;
-
-  listInput.append(span);
-
-  span.append(addTodoTextField.value);
 
   // Send value to the input field
   listInput.value = todoInput;

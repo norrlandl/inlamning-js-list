@@ -300,3 +300,32 @@ const list = {
 document.getElementById("DescriptionTextBox").value=document.getElementById("Description12").innerText;
 
 document.getElementById("add-todo-field").value=document.getElementById("span").innerText; */}
+
+
+// TILLBAKA KNAPP
+
+
+e.target.parentNode.childNodes[2].innerHTML = 'TILLBAKA';
+
+e.target.parentNode.childNodes[2].addEventListener('click', function (e) {
+  doList.append(e.target.parentNode);
+  e.target.parentNode.childNodes[2].innerHTML = 'FÄRDIG';
+});
+
+
+
+
+
+// ADD SPAN
+
+
+  // // Create span
+  // let span = list.createEl('span', null, null, null, 'span', null);
+
+  // span.append(todoInput);
+
+  // span.innerText = addTodoTextField.value;
+
+  // listInput.append(span);
+
+  // span.append(addTodoTextField.value);

@@ -1,0 +1,94 @@
+/* 
+--------------------------
+ TABLETS 960-768px
+--------------------------
+ */
+
+@media (max-width: 960px) {
+  .main {
+    width: 650px;
+  }
+
+  input {
+    width: 200px;
+  }
+
+  .first-div {
+    width: 500px;
+  }
+  .list-div {
+    width: 650px;
+  }
+}
+
+/* 
+--------------------------
+ MOBILE <768px
+--------------------------
+ */
+
+@media (max-width: 767px) {
+  .main {
+    width: 300px;
+    padding-top: 30px;
+  }
+
+  input {
+    width: 300px;
+  }
+
+  #adding-section {
+    margin-bottom: 80px;
+  }
+
+  #todo-list-section {
+    margin-bottom: 80px;
+  }
+
+  .first-div {
+    width: 300px;
+  }
+
+  .list-div {
+    width: 300px;
+  }
+
+  .btn-all {
+    width: 100px;
+  }
+
+  .btn-delete {
+    border-radius: 0px 0px 10px 0px;
+    border-right: 2px solid #858585;
+  }
+
+  .list-div ul li button,
+  .first-div button {
+    border: none;
+    border-bottom: 2px solid #858585;
+    border-left: 2px solid #858585;
+  }
+
+  #reset-btn {
+    border-right: 2px solid #858585;
+  }
+
+  #the-list-ul .btn-delete {
+    border-right: 2px solid #858585;
+  }
+
+  #the-done-list-ul .btn-delete {
+    border-right: 2px solid #858585;
+    width: 150px;
+  }
+  #the-done-list-ul .btn-edit {
+    width: 150px;
+  }
+
+  .btn-add {
+    width: 150px;
+  }
+  .btn-reset {
+    width: 150px;
+  }
+}
