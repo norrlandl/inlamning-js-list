@@ -51,7 +51,15 @@ h2 {
   margin-bottom: 150px;
 }
 
-section span {
+#adding-section span {
+  background-color: #5b46c7;
+}
+
+#todo-list-section span {
+  background-color: #ffa396;
+}
+
+#finished-section span {
   background-color: #7fe3b2;
 }
 
@@ -72,6 +80,10 @@ input {
   border-radius: 10px 0px 0px 0px;
   border: 2px solid #858585;
   background-color: white;
+}
+
+#adding-section input {
+  color: #5b46c7;
 }
 
 /* ERROR MESSAGES */
@@ -121,8 +133,14 @@ input {
   margin-bottom: 20px;
 }
 
-.todo-list input:disabled {
+#todo-list-section .todo-list input:disabled {
   color: #ffa396;
+  background-color: #f8f8f8;
+  border: 2px solid #858585;
+}
+
+#finished-section .todo-list input:disabled {
+  color: #7fe3b2;
   background-color: #f8f8f8;
   border: 2px solid #858585;
 }
