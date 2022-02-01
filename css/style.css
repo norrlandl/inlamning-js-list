@@ -124,6 +124,7 @@ input {
 .todo-list input:disabled {
   color: #ffa396;
   background-color: #f8f8f8;
+  border: 2px solid #858585;
 }
 
 .btn-all {
