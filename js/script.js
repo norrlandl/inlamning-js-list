@@ -16,18 +16,28 @@ const errorDiv = document.getElementById('error-div');
 
 const list = {
   // Create element
-  createEl(type, innerText, attribute1, attribute2, class1, class2) {
+  // createEl(type, innerText, attributeName, attributeValue, class1, class2) {
+  //   let element = document.createElement(type);
+  //   if (innerText) element.innerHTML = innerText;
+  //   if (attributeName) element.setAttribute(attributeName, attributeValue);
+  //   element.classList.add(class1);
+  //   if (class2) element.classList.add(class2);
+  //   return element;
+  // },
+
+  createEl(type, innerText, attributeName, attributeValue, classes) {
     let element = document.createElement(type);
     if (innerText) element.innerHTML = innerText;
-    if (attribute1) element.setAttribute(attribute1, attribute2);
-    element.classList.add(class1);
-    if (class2) element.classList.add(class2);
+    if (attributeName) element.setAttribute(attributeName, attributeValue);
+    if (classes) {
+      for (let i = 0; i < classes.length; i++)
+        element.classList.add(classes[i]);
+    }
     return element;
   },
 
   // Edit button
   editInput(e) {
-    // let errorMessages = '';
     if (e.target.innerText == 'ÄNDRA') {
       e.target.parentNode.firstChild.disabled = false;
       e.target.innerText = 'SPARA';
@@ -37,7 +47,7 @@ const list = {
       // Check if empty
       if (e.target.parentNode.firstChild.value.trim() === '') {
         // listInput.append(ERR)
-        eRR.innerHTML = '! En syssla kan inte vara tom';
+        eRR.innerHTML = '! Du kan inte spara en tom syssla';
         e.target.parentNode.append(eRR);
         e.target.parentNode.firstChild.disabled = false;
         e.target.innerText = 'SPARA';
@@ -51,7 +61,7 @@ const list = {
   // Done button
   done(e) {
     if (e.target.parentNode.firstChild.value.trim() === '') {
-      eRR.innerHTML = '! En syssla kan inte vara tom';
+      eRR.innerHTML = '! En tom syssla kan inte vara färdig';
       e.target.parentNode.append(eRR);
       return false;
     } else {
@@ -60,22 +70,11 @@ const list = {
     if ((e.target.parentNode.childNodes[1].innerText = 'SPARA')) {
       e.target.parentNode.childNodes[1].innerText = 'ÄNDRA';
     }
-
     // Make list-input disabled
     e.target.parentNode.firstChild.disabled = true;
     // Append
     doneList.append(e.target.parentNode);
     e.target.parentNode.childNodes[2].remove();
-
-    // if ((e.target.parentNode.childNodes[2].innerHTML = 'FÄRDIG')) {
-    //   e.target.parentNode.childNodes[2].innerHTML = 'TILLBAKA';
-    //   e.target.parentNode.childNodes[2].addEventListener('click', function (e) {
-    //     doList.append(e.target.parentNode);
-    //     e.target.parentNode.childNodes[2].innerHTML = 'FÄRDIG';
-    //   });
-    // } else {
-    //   return false;
-    // }
   },
 
   // Delete button
@@ -89,7 +88,7 @@ const list = {
   },
 };
 
-let eRR = list.createEl('p', null, null, null, 'error-messages');
+let eRR = list.createEl('p', null, null, null, ['error-messages']);
 
 addTodoBtn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -109,17 +108,10 @@ addTodoBtn.addEventListener('click', function (e) {
   }
 
   // Create list
-  let listItem = list.createEl('li', null, null, null, 'todo-list', null);
+  let listItem = list.createEl('li', null, null, null, ['todo-list']);
 
   // Create input field
-  let listInput = list.createEl(
-    'INPUT',
-    null,
-    'type',
-    'text',
-    'todo-field',
-    null
-  );
+  let listInput = list.createEl('INPUT', null, 'type', 'text', ['todo-field']);
 
   // Send value to the input field
   listInput.value = todoInput;
@@ -131,34 +123,22 @@ addTodoBtn.addEventListener('click', function (e) {
   listInput.disabled = true;
 
   //Create Edit-button
-  const editBtn = list.createEl(
-    'button',
-    'ÄNDRA',
-    null,
-    null,
+  const editBtn = list.createEl('button', 'ÄNDRA', null, null, [
     'btn-all',
-    'btn-edit'
-  );
+    'btn-edit',
+  ]);
 
   //Create Done-button
-  const doneBtn = list.createEl(
-    'button',
-    'FÄRDIG',
-    null,
-    null,
+  const doneBtn = list.createEl('button', 'FÄRDIG', null, null, [
     'btn-all',
-    'btn-done'
-  );
+    'btn-done',
+  ]);
 
   //Create Delete-button
-  const deleteBtn = list.createEl(
-    'button',
-    'RADERA',
-    null,
-    null,
+  const deleteBtn = list.createEl('button', 'RADERA', null, null, [
     'btn-all',
-    'btn-delete'
-  );
+    'btn-delete',
+  ]);
 
   // Append
   listItem.append(listInput, editBtn, doneBtn, deleteBtn);
