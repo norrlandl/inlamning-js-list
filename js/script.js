@@ -16,15 +16,6 @@ const errorDiv = document.getElementById('error-div');
 
 const list = {
   // Create element
-  // createEl(type, innerText, attributeName, attributeValue, class1, class2) {
-  //   let element = document.createElement(type);
-  //   if (innerText) element.innerHTML = innerText;
-  //   if (attributeName) element.setAttribute(attributeName, attributeValue);
-  //   element.classList.add(class1);
-  //   if (class2) element.classList.add(class2);
-  //   return element;
-  // },
-
   createEl(type, innerText, attributeName, attributeValue, classes) {
     let element = document.createElement(type);
     if (innerText) element.innerHTML = innerText;
@@ -46,7 +37,6 @@ const list = {
       e.target.parentNode.firstChild.disabled = true;
       // Check if empty
       if (e.target.parentNode.firstChild.value.trim() === '') {
-        // listInput.append(ERR)
         eRR.innerHTML = '! Du kan inte spara en tom syssla';
         e.target.parentNode.append(eRR);
         e.target.parentNode.firstChild.disabled = false;
